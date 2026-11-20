@@ -2,13 +2,16 @@
 
 **Your career, recorded once. Your resume, tailored every time.**
 
+![Resume Bot workflow: career log and job posting go to an agent that follows rules.md, then tools/render.py produces a versioned PDF and DOCX](docs/images/hero.png)
+
+
 Resume Bot is an agent-driven resume workflow. Keep a structured record of your experience, projects, skills, and achievements; add a job description; and let an AI agent build a tailored, evidence-based resume.
 
 The agent selects relevant facts and drafts the content. A deterministic Python renderer handles the Word layout, PDF export, and page-fit checks.
 
-![Resume Bot workflow: maintain career facts, add a job posting, let an agent tailor the resume, and render the final PDF](docs/images/flow.gif)
 
 ## How it works
+![Resume Bot workflow: career log and job posting go to an agent that follows rules.md, then tools/render.py produces a versioned PDF and DOCX](docs/images/architecture.png)
 
 1. **Maintain your career record.** Add work, projects, skills, education, and achievements to `sections/` as they happen.
 2. **Add a job posting.** Create a folder under `jobs/` and put the description or link in `posting.md`.
