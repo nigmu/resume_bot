@@ -1,16 +1,16 @@
-# Resume Ledger
+# Resume Bot
 
 **Your career, recorded once. Your resume, tailored every time.**
 
-Resume Ledger is an agent-driven resume workflow. Keep a structured record of your experience, projects, skills, and achievements; add a job description; and let an AI agent build a tailored, evidence-based resume.
+Resume Bot is an agent-driven resume workflow. Keep a structured record of your experience, projects, skills, and achievements; add a job description; and let an AI agent build a tailored, evidence-based resume.
 
 The agent selects relevant facts and drafts the content. A deterministic Python renderer handles the Word layout, PDF export, and page-fit checks.
 
-![Resume Ledger workflow: maintain career facts, add a job posting, let an agent tailor the resume, and render the final PDF](docs/images/flow.gif)
+![Resume Bot workflow: maintain career facts, add a job posting, let an agent tailor the resume, and render the final PDF](docs/images/flow.gif)
 
 ## How it works
 
-1. **Maintain your career ledger.** Add work, projects, skills, education, and achievements to `sections/` as they happen.
+1. **Maintain your career record.** Add work, projects, skills, education, and achievements to `sections/` as they happen.
 2. **Add a job posting.** Create a folder under `jobs/` and put the description or link in `posting.md`.
 3. **Let the agent do the work.** The agent reads `AGENTS.md` and `rules.md`, matches the posting against your career record, and drafts `resume.md`.
 4. **Build and validate.** The agent runs `tools/render.py` to generate a Word document and PDF, then uses the fit report to refine the resume until it meets the page constraints.
@@ -20,7 +20,7 @@ The agent owns **content selection and tailoring**. The renderer owns **formatti
 
 ## Agent-driven by design
 
-Resume Ledger is designed to be run by an always-on or coding agent that can access the repository and execute Python. The workflow is defined in plain Markdown rather than tied to a specific AI provider:
+Resume Bot is designed to be run by an always-on or coding agent that can access the repository and execute Python. The workflow is defined in plain Markdown rather than tied to a specific AI provider:
 
 - `AGENTS.md` is the agent entry point.
 - `rules.md` defines the content rules, selection process, and resume constraints.
@@ -28,7 +28,7 @@ Resume Ledger is designed to be run by an always-on or coding agent that can acc
 - The agent writes generated files only inside `output/`.
 - Each revision is saved as a new version, preserving earlier outputs.
 
-The agent must not invent employers, titles, dates, skills, tools, responsibilities, or metrics. Missing evidence should be reported—not fabricated. Resume Ledger does not submit applications or send resumes anywhere.
+The agent must not invent employers, titles, dates, skills, tools, responsibilities, or metrics. Missing evidence should be reported—not fabricated. Resume Bot does not submit applications or send resumes anywhere.
 
 ## Quick start
 
@@ -42,7 +42,7 @@ Requires Python 3. On Windows, Microsoft Word exports the PDF. On Linux, LibreOf
 - Replace the sample content in `sections/` with your own career history.
 - Record full context and outcomes in `sections/my_work.md`; the agent will select and condense relevant details for each role.
 
-Keep the ledger current. It is the source of truth for every resume.
+Keep the record current. It is the source of truth for every resume.
 
 ### 3. Add a job
 
@@ -68,12 +68,12 @@ output/Company_Role/v1/
 - `.docx` and `.pdf` — rendered resume files.
 - `changes.md` — summary of selections, edits, omissions, and evidence gaps.
 
-To revise a resume, ask the agent for changes. It should create `v2` rather than overwrite `v1`. If an evidence gap is reported, update the career ledger with the real information before asking for another version.
+To revise a resume, ask the agent for changes. It should create `v2` rather than overwrite `v1`. If an evidence gap is reported, update the career record with the real information before asking for another version.
 
 ## Project structure
 
 ```text
-Resume Ledger/
+Resume Bot/
 ├── AGENTS.md              # Agent entry point
 ├── rules.md               # Selection, wording, and layout rules
 ├── profile.md             # Contact details and page limit
